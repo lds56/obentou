@@ -1,0 +1,32 @@
+---
+import { calculateCardDimensions, normalizeUrl, extractMainDomain } from './Card.tsx';
+
+// 定义 props
+export interface Props {
+  content: string;
+  shape: 'tofu' | 'puff' | 'chikuwa' | 'tteok' | 'sausage';
+  imgUrl: string;
+}
+
+const {
+  content,
+  shape,
+  imgUrl,
+} = Astro.props;
+
+const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensions(shape);
+
+console.log("img:", imgUrl)
+// 根据背景类型设置卡片背景样式
+let textColor = 'black';
+let cardBackgroundClasses = 'bg-cover bg-center bg-no-repeat';
+let cardBackgroundInlineStyles = `background-image: url('${imgUrl}');`;
+---
+
+<div class={`no-bd-card ${cardBackgroundClasses} text-${textColor} ${gridColSpan} ${gridRowSpan}`} style={cardBackgroundInlineStyles}>
+  <div class="card-body">
+    <div class="absolute bottom-4 left-4 bg-white rounded-lg p-2 flex items-center">
+      <span>{content}</span>
+    </div>
+  </div>
+</div>

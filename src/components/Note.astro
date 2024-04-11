@@ -1,0 +1,48 @@
+---
+import { calculateCardDimensions, getBackgroundStyles } from './Card.tsx';
+import type { BackgroundType, Shape } from './enums.tsx';
+
+
+// 定义 props
+export interface Props {
+  title: string;
+  content: string;
+  shape: Shape;
+//   size: 'large' | 'medium' | 'small';
+  background: BackgroundType;
+  bgColor?: string;
+  bgGradient?: string;
+  bgImgUrl?: string;
+  textColor?: string;
+}
+
+const {
+  title,
+  content,
+  shape,
+//   size,
+  background,
+  bgColor = 'bg-base-200',
+  bgGradient = 'bg-gradient-to-r from-primary to-secondary',
+  bgImgUrl = 'https://via.placeholder.com/800x600',
+  textColor = 'text-base-content',
+} = Astro.props;
+
+const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensions(shape);
+
+let bgValue = background === 'color' ? bgColor : background === 'gradient' ? bgGradient : bgImgUrl;
+
+const [ cardBackgroundClasses, cardBackgroundInlineStyles ] = getBackgroundStyles(background, bgValue);
+
+---
+
+<div class={`${gridColSpan} ${gridRowSpan}`}>
+  <div class={`bd-card ${cardBackgroundClasses} ${textColor} ${gridColSpan} ${gridRowSpan}`} 
+     style={cardBackgroundInlineStyles}>
+    
+    <div class="card-body">
+      {shape !== 'sausage' && <h3 class="card-title">{title}</h3>}
+      <p>{content}</p>
+    </div>
+  </div>
+</div>

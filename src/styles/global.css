@@ -1,0 +1,19 @@
+/* 导入 Tailwind CSS 基础样式 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义全局样式 */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.bd-card {
+  @apply card shadow-sm border border-base-300 w-full h-full;
+}
+
+.no-bd-card {
+  @apply card shadow-sm w-full h-full rounded-md;
+}
+
+/* 其他自定义样式... */

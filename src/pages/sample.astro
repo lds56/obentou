@@ -1,0 +1,137 @@
+---
+import '../styles/global.css';
+
+import Layout from '../layouts/Layout.astro';
+import Note from '../components/Note.astro';
+import Link from '../components/Link.astro';
+import Photo from '../components/Photo.astro';
+import Social from '../components/Social.astro'
+import Map from '../components/Map.astro'
+import Profile from '../components/Profile.astro';
+import Section from '../components/Section.astro';
+import Showcase from '../components/Showcase.astro';
+---
+<Layout>
+
+	<Profile myname="John Smith" mybio="A time traveler" myavatar="/imgs/avatar.jpeg"/>
+
+	<Showcase>
+
+		<Section
+			content="Preface"
+		/>
+
+		<!-- <Section header="Brief Intro"/> -->
+		<Note
+			title="What's my hobby"
+			content="find aliens!"
+			shape="tofu"
+			background="gradient"
+			bgGradient="from-green-500 to-yellow-300"
+		/>
+
+		<Link
+			content="This is my homepage zero"
+			shape="tteok"
+			url="www.instagram.com"
+		/>
+				
+		<Section
+			content="Chapter I"
+		/>
+
+		<Note
+			title="PPPPPPP"
+			content="cool!"
+			shape="puff"
+			background="color"
+			bgColor="bg-blue-300"
+			textColor="text-black"
+		/>
+
+		<Note
+			title="My hometown"
+			content="Welcome to come here"
+			shape="tteok"
+			background="image"
+			bgImgUrl="/imgs/trees.jpeg"			
+		/>
+
+		<Note
+			title="PPPPQQQ"
+			content="cool!"
+			shape="puff"
+			background="color"
+			bgColor="bg-yellow-300"
+			textColor="text-white"
+		/>
+
+		<Note
+			title="aloha"
+			content="helllllo"
+			shape="tofu"
+			background="color"
+			bgColor="bg-green-500"
+			textColor="text-yellow-300"
+		/>
+		
+		<Social
+			platform="X"
+			userId="@johnsmith416"
+			content="John Smith"
+			shape="puff"
+		/>
+		
+		<Note
+			title="aloha2"
+			content="helllllo"
+			shape="puff"
+			background="color"
+			bgColor="bg-pink-500"
+			textColor="text-white-300"
+		/>
+		
+		<Social
+			platform="Instagram"
+			userId="@johnsmith111"
+			content="John Smith 2"
+			shape="chikuwa"
+		/>
+				
+		<Section
+			content="Chapter II"
+		/>
+
+		<Link
+			content="This is my homepage"
+			shape="tteok"
+			url="www.baidu.com"
+		/>
+
+		<Link
+			content="Goooooooooooogle"
+			shape="tofu"
+			url="www.google.com"
+		/>
+
+		<Photo
+			content="This is my cat"
+			shape="chikuwa"
+			imgUrl="/imgs/cats.jpg"
+		/>
+
+		<!-- <Code
+			content=""
+			shape="tofu"
+		/> -->
+
+		<!-- <Map
+			content="Westlake"
+			address="Hangzhou,China"
+			shape="tofu"
+			zoom="10"
+			textColor="black"
+		/> -->
+	</Showcase>
+
+</Layout>

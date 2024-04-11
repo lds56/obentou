@@ -1,0 +1,33 @@
+---
+export interface Props {
+    myname: string;
+    mybio: string;
+    myavatar: string;
+}
+
+const {
+    myname,
+    mybio,
+    myavatar,
+} = Astro.props;
+---
+<div class="flex h-full w-full max-w-[428px] items-center justify-center p-6 pt-12 pb-0 xl:absolute xl:top-0 xl:max-w-[min(100vw,1728px)] xl:items-stretch xl:justify-start xl:p-16">
+  <div class="flex w-full flex-col px-4 xl:mr-20 xl:flex-1 xl:px-0">
+    <div class="relative xl:sticky xl:top-16" style="opacity: 1; transform: translate(0px, 0px); transition: opacity 1s cubic-bezier(0.42, 0, 0.25, 1) 0s, transform 1s cubic-bezier(0.2, 1.18, 0.47, 1) 0s;">
+
+      <div class="flex flex-col md:items-start">
+        <div class="avatar mb-6">
+          <div class="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src={myavatar} alt="Profile" />
+          </div>
+        </div>
+
+        <div class="text-left md:mt-6">
+          <h2 class="text-5xl font-bold mb-2">{myname}</h2>
+          <p class="text-gray-600 mb-4">{mybio}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>  
+</div>
