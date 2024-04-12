@@ -21,11 +21,20 @@
     },
     {
         "Note": {
-            "title": "Just do it",
+            "title": "Just do it long long long long long",
             "content": "wooooooooooow",
             "shape": "sausage",
             "background": "color",
-            "bgGradient": "green-500"
+            "bgGradient": "bg-green-500"
+        }
+    },
+    {
+        "Note": {
+            "title": "Just do it long long long long long",
+            "content": "wooooooooooow",
+            "shape": "puff",
+            "background": "color",
+            "bgGradient": "bg-green-300"
         }
     },
     {
@@ -77,7 +86,7 @@
     },
     {
         "Photo": {
-            "content": "This is my cat",
+            "content": "This is my cat, a very cute cat",
             "shape": "chikuwa",
             "imgUrl": "/imgs/cats.jpg"
         }

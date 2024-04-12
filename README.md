@@ -1,2 +1,2 @@
 # obentou
-An alternative of Bento, but static.
+An alternative of Bento, but static site.

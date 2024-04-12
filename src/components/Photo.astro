@@ -25,8 +25,8 @@ let cardBackgroundInlineStyles = `background-image: url('${imgUrl}');`;
 
 <div class={`no-bd-card ${cardBackgroundClasses} text-${textColor} ${gridColSpan} ${gridRowSpan}`} style={cardBackgroundInlineStyles}>
   <div class="card-body">
-    <div class="absolute bottom-4 left-4 bg-white rounded-lg p-2 flex items-center">
-      <span>{content}</span>
+    <div class="absolute bottom-4 left-4 right-4 bg-white rounded-lg p-2 flex items-center">
+      <span class="line-clamp-1">{content}</span>
     </div>
   </div>
 </div>
