@@ -40,14 +40,14 @@ const [ cardBackgroundClasses, cardBackgroundInlineStyles ] = getBackgroundStyle
   <div class={`bd-card ${cardBackgroundClasses} ${textColor} ${gridColSpan} ${gridRowSpan}`} 
      style={cardBackgroundInlineStyles}>
      {shape === 'sausage'? (
-      <div class="card-body py-4">
+      <div class="card-body-sm">
         <div class="card-actions justify-start flex items-center h-8">
           <p>{content}</p>
         </div>
       </div>
       ) : (      
-      <div class="card-body">
-        <div class="card-actions justify-start flex items-center">
+      <div class="card-body-lg">
+        <div class="card-actions justify-start flex flex-col">
           <h3 class="card-title line-clamp-1">{title}</h3>
           <p>{content}</p>
         </div>

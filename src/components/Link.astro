@@ -26,14 +26,14 @@ const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensi
 <div class={`${gridColSpan} ${gridRowSpan}`}>
   <div class={`bd-card text-${textColor}`}>
     {shape === 'sausage'? (
-      <div class="card-body py-4">
+      <div class="card-body-sm">
         <div class="card-actions justify-start flex items-center">
           <img src={`${normUrl}/favicon.ico`} alt="Icon" class="w-8 h-8 rounded-lg">
           <p class="text-gray-600 ml-4">{mainDomain}</p>
         </div>
       </div>
     ) : (
-      <div class="card-body">
+      <div class="card-body-lg">
         <div class="card-actions justify-start">
           <img src={`${normUrl}/favicon.ico`} alt="Icon" class="w-8 h-8 rounded-lg">
         </div>

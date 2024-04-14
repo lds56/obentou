@@ -13,11 +13,19 @@ body {
 }
 
 .bd-card {
-  @apply card shadow-sm border border-base-300 w-full h-full;
+  @apply card shadow-sm border border-base-300 w-full h-full rounded-3xl;
 }
 
 .no-bd-card {
-  @apply card shadow-sm w-full h-full rounded-md;
+  @apply card shadow-sm w-full h-full rounded-3xl;
+}
+
+.card-body-sm {
+  @apply card-body px-5 py-4
+}
+
+.card-body-lg {
+  @apply card-body px-5 py-6
 }
 
 .grid-nx6 {
