@@ -1,0 +1,49 @@
+---
+import { calculateCardDimensions } from './Card.tsx';
+import type { Shape } from './enums';
+
+const accessToken = import.meta.env.MAPBOX_ACCESS_TOKEN;
+
+// 定义 props
+export interface Props {
+  content: string;
+  address: string;
+  shape: Shape;
+  zoom: string;
+  textColor?: string;
+}
+
+const {
+  content,
+  address,
+  shape,
+  zoom = '10',
+  textColor = 'base-content',
+} = Astro.props;
+
+const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensions(shape);
+
+let lng = 120.2052341401577;
+let lat = 30.2489635238779;
+let width = 480;
+let height = 480;
+let scale = '@2x';
+let format = 'png';
+let zoomLevel = parseInt(zoom) || 10;
+
+// let mapUrl = `https://api.maptiler.com/api/maps/landscape/static/${lng},${lat},${zoom}/${width}x${height}${scale}.${format}?key=${accessToken}`
+let mapUrl = `https://api.mapbox.com/styles/v1/mapbox/light-v11/static/${lng},${lat},${zoomLevel}/${width}x${height}?access_token=${accessToken}&attribution=false`
+console.log('map url:', mapUrl);
+
+let cardBgStyle = `background-image: url('${mapUrl}');`
+
+---
+
+<div class={`no-bd-card text-${textColor} shadow-xl ${gridColSpan} ${gridRowSpan}`} 
+     style={cardBgStyle}>
+  <div class="card-body">
+    <div class="absolute bottom-4 left-4 bg-white rounded-lg p-2 flex items-center">
+      <span>{content}</span>
+    </div>
+  </div>
+</div>

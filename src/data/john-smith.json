@@ -99,6 +99,15 @@
             "background": "image",
             "bgImgUrl": "trees.jpeg"
         }
+    },
+    {
+        "Map": {
+            "title": "Location",
+            "content": "Hangzhou, China",
+            "shape": "tteok",
+            "address": "Hangzhou",
+            "zoom": "10"
+        }
     }
     ]
 }
