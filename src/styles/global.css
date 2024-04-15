@@ -28,6 +28,11 @@ body {
   @apply card-body px-5 py-6
 }
 
+.grid-nx8 {
+  grid-template-columns: repeat(8, 67.5px);
+  grid-auto-rows: 67.5px;
+}
+
 .grid-nx6 {
   grid-template-columns: repeat(6, 67.5px);
   grid-auto-rows: 67.5px;

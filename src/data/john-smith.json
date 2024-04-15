@@ -1,7 +1,7 @@
 {
     "profile": {
-      "name": "Pato Tato",
-      "bio": "🥔",
+      "name": "John Smith",
+      "bio": "ジョン・スミス",
       "avatar": "avatar.jpeg"
     },
     "showcase": [
@@ -12,8 +12,8 @@
     },
     {
         "Note": {
-            "title": "What's my hobby",
-            "content": "find aliens!",
+            "title": "Carpe Diem: Seizing the Day",
+            "content": "The phrase \"carpe diem\" has become a iconic part of Western culture, a rallying cry for living life to the fullest. Originating from the Latin phrase \"carpe diem, quam minimum credula postero,\" which translates to \"Seize the day, put very little trust in tomorrow,\" this sentiment has resonated throughout the ages.",
             "shape": "tofu",
             "background": "gradient",
             "bgGradient": "from-green-500 to-yellow-300"
