@@ -61,14 +61,15 @@ let showcase = personalData.showcase || [];
 							shape={item.Photo.shape} 
 							imgUrl={item.Photo.imgUrl}
 						/>
-			  } else if (item.Map) {
-				return <Map 
-							content={item.Map.content} 
-							shape={item.Map.shape}
-							address={item.Map.addr} 
-							zoom={item.Map.zoom} 
-						/>
-			  }
+			  } 
+			//   else if (item.Map) {
+			// 	return <Map 
+			// 				content={item.Map.content} 
+			// 				shape={item.Map.shape}
+			// 				address={item.Map.addr} 
+			// 				zoom={item.Map.zoom} 
+			// 			/>
+			//   }
 			})}
 
 	</Showcase>
