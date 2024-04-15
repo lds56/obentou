@@ -103,7 +103,7 @@ import type { BackgroundType } from './enums.tsx';
       cardBackgroundClasses = `bg-gradient-to-tr ${bgValue}`;
     } else if (background === 'image') {
       cardBackgroundClasses = 'bg-cover bg-center bg-no-repeat';
-      cardBackgroundInlineStyles = `background-image: url('${bgValue}');`;
+      cardBackgroundInlineStyles = `background-image: url('/assets/imgs/photos/${bgValue}');`;
     }
     return [cardBackgroundClasses, cardBackgroundInlineStyles];
   }

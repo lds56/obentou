@@ -2,7 +2,7 @@
     "profile": {
       "name": "Pato Tato",
       "bio": "🥔",
-      "avatar": "/imgs/avatar.jpeg"
+      "avatar": "avatar.jpeg"
     },
     "showcase": [
     {
@@ -88,7 +88,7 @@
         "Photo": {
             "content": "This is my cat, a very cute cat",
             "shape": "chikuwa",
-            "imgUrl": "/imgs/cats.jpg"
+            "imgUrl": "cats.jpg"
         }
     },
     {
@@ -97,7 +97,7 @@
             "content": "Welcome to come here",
             "shape": "tteok",
             "background": "image",
-            "bgImgUrl": "/imgs/trees.jpeg"
+            "bgImgUrl": "trees.jpeg"
         }
     }
     ]

@@ -20,7 +20,7 @@ console.log("img:", imgUrl)
 // 根据背景类型设置卡片背景样式
 let textColor = 'black';
 let cardBackgroundClasses = 'bg-cover bg-center bg-no-repeat';
-let cardBackgroundInlineStyles = `background-image: url('${imgUrl}');`;
+let cardBackgroundInlineStyles = `background-image: url('/assets/imgs/photos/${imgUrl}');`;
 ---
 
 <div class={`no-bd-card ${cardBackgroundClasses} text-${textColor} ${gridColSpan} ${gridRowSpan}`} style={cardBackgroundInlineStyles}>
@@ -28,5 +28,6 @@ let cardBackgroundInlineStyles = `background-image: url('${imgUrl}');`;
     <div class="absolute bottom-4 left-4 right-4 bg-white rounded-lg p-2 flex items-center">
       <span class="line-clamp-1">{content}</span>
     </div>
+    
   </div>
 </div>
