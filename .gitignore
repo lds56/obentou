@@ -24,7 +24,6 @@ pnpm-debug.log*
 .astro/
 node_modules/
 .cache/
-public/
 __astro/
 
 Map.astro
