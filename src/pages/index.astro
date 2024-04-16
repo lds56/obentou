@@ -10,6 +10,7 @@ import Map from '../components/Map.astro'
 import Profile from '../components/Profile.astro';
 import Section from '../components/Section.astro';
 import Showcase from '../components/Showcase.astro';
+import Album from '../components/Album.astro'
 
 import data from '../data/john-smith.json';
 
@@ -57,6 +58,7 @@ let showcase = personalData.showcase || [];
 						/>
 			  } else if (item.Photo) {
 				return <Photo 
+							title={item.Photo.title}
 							content={item.Photo.content} 
 							shape={item.Photo.shape} 
 							imgUrl={item.Photo.imgUrl}
@@ -68,6 +70,12 @@ let showcase = personalData.showcase || [];
 							shape={item.Map.shape}
 							address={item.Map.addr} 
 							zoom={item.Map.zoom} 
+						/>
+			  }
+			  else if (item.Album) {
+				return <Album 
+							shape={item.Album.shape}
+							imgs={item.Album.imgs} 
 						/>
 			  }
 			})}

@@ -18,7 +18,7 @@
             "background": "gradient",
             "bgGradient": "from-green-500 to-yellow-300"
         }
-    },
+    }, 
     {
         "Note": {
             "title": "Just do it long long long long long",
@@ -78,6 +78,16 @@
             "shape": "puff",
             "url": "www.facebook.com"
         }
+    },   
+    {
+        "Album": {
+            "shape": "tofu",
+            "imgs": [
+                "cd.jpeg",
+                "cats.jpg",
+                "tree.jpeg"
+            ]
+        }
     },
     {
         "Section": {
@@ -86,9 +96,24 @@
     },
     {
         "Photo": {
+            "title": "A photo",
             "content": "This is my cat, a very cute cat",
             "shape": "chikuwa",
-            "imgUrl": "cats.jpg"
+            "imgUrl": "snow.jpg"
+        }
+    },
+    {
+        "Photo": {
+            "title": "A photo II",
+            "content": "This is my cat, a very cute cat",
+            "shape": "sausage",
+            "imgUrl": "tree.jpeg"
+        }
+    },
+    {
+        "Photo": {
+            "shape": "tteok",
+            "imgUrl": "tree.jpeg"
         }
     },
     {

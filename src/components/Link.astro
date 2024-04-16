@@ -24,7 +24,7 @@ const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensi
 ---
 
 <div class={`${gridColSpan} ${gridRowSpan}`}>
-  <div class={`bd-card text-${textColor}`}>
+  <a href={normUrl} class={`bd-card text-${textColor} hover:bg-gray-100/50 transition-colors duration-300`}>
     {shape === 'sausage'? (
       <div class="card-body-sm">
         <div class="card-actions justify-start flex items-center">
@@ -41,5 +41,5 @@ const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensi
         <p class="text-sm text-gray-600">{mainDomain}</p>
       </div>
     )}
-  </div>
+  </a>
 </div>

@@ -1,33 +1,52 @@
 ---
-import { calculateCardDimensions, normalizeUrl, extractMainDomain } from './Card.tsx';
+import {
+  calculateCardDimensions,
+  normalizeUrl,
+  extractMainDomain,
+} from "./Card.tsx";
 
 // 定义 props
 export interface Props {
+  title: string;
   content: string;
-  shape: 'tofu' | 'puff' | 'chikuwa' | 'tteok' | 'sausage';
+  shape: "tofu" | "puff" | "chikuwa" | "tteok" | "sausage";
   imgUrl: string;
 }
 
-const {
-  content,
-  shape,
-  imgUrl,
-} = Astro.props;
+const { title, content, shape, imgUrl } = Astro.props;
 
-const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensions(shape);
+const { cardWidth, cardHeight, gridColSpan, gridRowSpan } =
+  calculateCardDimensions(shape);
 
-console.log("img:", imgUrl)
+console.log("img:", imgUrl);
 // 根据背景类型设置卡片背景样式
-let textColor = 'black';
-let cardBackgroundClasses = 'bg-cover bg-center bg-no-repeat';
+let textColor = "white";
+let cardBackgroundClasses = "bg-cover bg-center bg-no-repeat";
 let cardBackgroundInlineStyles = `background-image: url('/assets/imgs/photos/${imgUrl}');`;
 ---
 
-<div class={`no-bd-card ${cardBackgroundClasses} text-${textColor} ${gridColSpan} ${gridRowSpan}`} style={cardBackgroundInlineStyles}>
-  <div class="card-body">
-    <div class="absolute bottom-4 left-4 right-4 bg-white rounded-lg p-2 flex items-center">
-      <span class="line-clamp-1">{content}</span>
-    </div>
-    
-  </div>
+<div
+  class={`no-bd-card ${cardBackgroundClasses} text-${textColor} ${gridColSpan} ${gridRowSpan}`}
+  style={cardBackgroundInlineStyles}>
+  {
+    title && content && (
+      <>
+        <div class="absolute inset-0 bg-black rounded-3xl opacity-30" />
+        {shape === "sausage" ? (
+          <div class="card-body-sm relative z-10">
+            <div class="card-actions justify-start flex items-center h-8">
+              <p>{content}</p>
+            </div>
+          </div>
+        ) : (
+          <div class="card-body-lg relative z-10">
+            <div class="card-actions justify-start flex flex-col">
+              <h3 class="card-title line-clamp-1">{title}</h3>
+              <p>{content}</p>
+            </div>
+          </div>
+        )}
+      </>
+    )
+  }
 </div>

@@ -20,6 +20,19 @@ body {
   @apply card shadow-sm w-full h-full rounded-3xl;
 }
 
+.no-bd-card.image-fill {
+  display:grid
+}
+
+.no-bd-card.image-fill > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.album {
+  @apply carousel shadow-sm w-full h-full rounded-3xl;
+}
+
 .card-body-sm {
   @apply card-body px-5 py-4
 }
