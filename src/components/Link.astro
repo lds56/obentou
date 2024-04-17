@@ -27,15 +27,19 @@ const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensi
   <a href={normUrl} class={`bd-card text-${textColor} hover:bg-gray-100/50 transition-colors duration-300`}>
     {shape === 'sausage'? (
       <div class="card-body-sm">
-        <div class="card-actions justify-start flex items-center">
-          <img src={`${normUrl}/favicon.ico`} alt="Icon" class="w-8 h-8 rounded-lg">
+        <div class="card-actions justify-start items-center">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center"> 
+            <img class="w-6 h-6" src={`http://${mainDomain}/favicon.ico`} alt="Icon">
+          </div>
           <p class="text-gray-600 ml-4">{mainDomain}</p>
         </div>
       </div>
     ) : (
       <div class="card-body-lg">
         <div class="card-actions justify-start">
-          <img src={`${normUrl}/favicon.ico`} alt="Icon" class="w-8 h-8 rounded-lg">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center"> 
+            <img class="w-6 h-6" src={`http://${mainDomain}/favicon.ico`} alt="Icon">
+          </div>
         </div>
         <h2 class="card-title line-clamp-1">{content}</h2>
         <p class="text-sm text-gray-600">{mainDomain}</p>
