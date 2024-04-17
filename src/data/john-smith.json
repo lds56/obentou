@@ -15,8 +15,7 @@
             "title": "Carpe Diem: Seizing the Day",
             "content": "The phrase \"carpe diem\" has become a iconic part of Western culture, a rallying cry for living life to the fullest. Originating from the Latin phrase \"carpe diem, quam minimum credula postero,\" which translates to \"Seize the day, put very little trust in tomorrow,\" this sentiment has resonated throughout the ages.",
             "shape": "tofu",
-            "background": "gradient",
-            "bgGradient": "from-green-500 to-yellow-300"
+            "bgColor": "from-green-500 to-yellow-300"
         }
     }, 
     {
@@ -24,8 +23,7 @@
             "title": "Just do it long long long long long",
             "content": "wooooooooooow",
             "shape": "sausage",
-            "background": "color",
-            "bgGradient": "bg-green-500"
+            "bgColor": "bg-green-500"
         }
     },
     {
@@ -33,8 +31,7 @@
             "title": "Just do it long long long long long",
             "content": "wooooooooooow",
             "shape": "puff",
-            "background": "color",
-            "bgGradient": "bg-green-300"
+            "bgColor": "bg-green-300"
         }
     },
     {

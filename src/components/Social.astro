@@ -23,29 +23,30 @@ let socialBg =
 {
   'X': {
     'logo': 'X_White.svg',
-    'background': 'color',
-    'bgValue': 'bg-black',
+    'bgColor': 'bg-black',
     'textColor': 'white',
   },
   'Instagram': {
     'logo': 'Instagram_White.svg',
-    'background': 'trgradient',
-    'bgValue': 'bg-gradient-to-tr from-yellow-300 via-pink-600 to-indigo-900',
+    'bgColor': 'bg-gradient-to-tr from-yellow-300 via-pink-600 to-indigo-900',
+    'textColor': 'white',
+  },
+  'Xiaohongshu': {
+    'logo': '',
+    'bgColor': 'bg-[#FF2741]',
     'textColor': 'white',
   }
 }
 
 let logo = socialBg[platform]['logo'];
 
-const [ cardBackgroundClasses, cardBackgroundInlineStyles ] = getBackgroundStyles(
-  socialBg[platform].background, 
-  socialBg[platform].bgValue);
+const cardBackgroundClasses = getBackgroundStyles(socialBg[platform].bgColor);
 
 const textColor = socialBg[platform].textColor || 'black';
 ---
 
 <div class={`${gridColSpan} ${gridRowSpan}`}>
-  <div class={`bd-card ${cardBackgroundClasses} text-${textColor}`} style={cardBackgroundInlineStyles}>
+  <div class={`bd-card ${cardBackgroundClasses} text-${textColor}`}>
     <div class="card-body-lg">
       <div class="card-actions justify-start">
         <img src={`/assets/imgs/social/${logo}`} alt="Icon" class="w-8 h-8 rounded-lg">

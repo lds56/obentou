@@ -91,21 +91,19 @@ import type { BackgroundType } from './enums.tsx';
     }
   }
 
-  export function getBackgroundStyles(background: string, bgValue: string): [string, string] {
-    console.log('background:', background, ', bgvalue:', bgValue);
+  export function getBackgroundStyles(bgValue: string): string {
+    // console.log('background:', background, ', bgvalue:', bgValue);
     let cardBackgroundClasses = '';
-    let cardBackgroundInlineStyles = '';
-    if (background === 'color') {
+    let parts = bgValue.split(' ')
+    // let cardBackgroundInlineStyles = '';
+    if (parts.length == 1) {
       cardBackgroundClasses = bgValue;
-    } else if (background === 'gradient') {
+    } else if (parts.length == 2) {
       cardBackgroundClasses = `bg-gradient-to-r ${bgValue}`;
-    } else if (background === 'trgradient') {
+    } else if (parts.length >= 3) {
       cardBackgroundClasses = `bg-gradient-to-tr ${bgValue}`;
-    } else if (background === 'image') {
-      cardBackgroundClasses = 'bg-cover bg-center bg-no-repeat';
-      cardBackgroundInlineStyles = `background-image: url('/assets/imgs/photos/${bgValue}');`;
-    }
-    return [cardBackgroundClasses, cardBackgroundInlineStyles];
+    } 
+    return cardBackgroundClasses;
   }
 
 // // 用法示例
