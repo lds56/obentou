@@ -17,14 +17,54 @@ const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensi
 // console.log("img:", imgUrl)
 // 根据背景类型设置卡片背景样式
 // let textColor = 'black';
-let cardBackgroundClasses = ''; // 'bg-cover bg-center bg-no-repeat';
+// let cardBackgroundClasses = ''; // 'bg-cover bg-center bg-no-repeat';
 ---
 
-<div class={`album ${cardBackgroundClasses} ${gridColSpan} ${gridRowSpan}`}>
-  {imgs.map((img: string) => {
-      return   <div class="carousel-item w-full">
-        <img src={`/assets/imgs/photos/${img}`} class="w-full h-full object-cover" alt="Tailwind CSS Carousel component" />
-      </div> 
-    })
-  }
+<div class={`no-bd-card ${gridColSpan} ${gridRowSpan}`}>
+  <div class="carousel shadow-sm w-full h-full rounded-3xl">
+    {
+      imgs.map((img: string) => {
+        return   <div class="carousel-item w-full">
+          <img src={`/assets/imgs/photos/${img}`} class="w-full h-full object-cover" alt="Tailwind CSS Carousel component" />
+        </div> 
+      })
+    }
+  </div>
+  <div class="absolute bottom-2 flex justify-center w-full gap-2">
+    {
+      imgs.map((img: string) => {
+        return <button class="carousel-dot w-2 h-2 rounded-full bg-gray-400 mx-1"></button>
+      })
+    }
+  </div>
 </div>
+<!-- 
+<script>
+    // JavaScript
+  const carouselImages = document.querySelectorAll('.carousel-item');
+  const indicators = document.querySelectorAll('.carousel-dot');
+
+  let currentIndex = 0;
+
+  function showImage(index: number) {
+    carouselImages.forEach((image, i) => {
+      image.classList.toggle('active', i === index);
+    });
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle('active', i === index);
+    });
+  }
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      currentIndex = index;
+      showImage(currentIndex);
+    });
+  });
+
+  // 自动轮播
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % carouselImages.length;
+    showImage(currentIndex);
+  }, 5000);
+</script> -->

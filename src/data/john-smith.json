@@ -43,6 +43,14 @@
         }
     },
     {
+        "Social": {
+            "shape": "puff",
+            "content": "John Smith",
+            "platform": "Xiaohongshu",
+            "userId": "@johnsmithRed"
+        }
+    },
+    {
         "Section": {
             "content": "Chapter II"
         }
