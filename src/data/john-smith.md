@@ -1,7 +1,5 @@
 # Profile
-## name
-John Smith
-## Bio
+## John Smith
 A time traveler
 # Set
 ## Brief Intro
@@ -9,8 +7,9 @@ A time traveler
 #### What's my hobby
 find aliens!
 > gradient:blue,green
-### Twitter Puff
+### Social Puff
 X
+> platform:X
 > id:@johnsmith416
 ## Artworks
 ### Link Sausage

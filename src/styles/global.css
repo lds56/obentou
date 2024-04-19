@@ -56,6 +56,19 @@ body {
   grid-auto-rows: 67.5px;
 }
 
+/* .grid-nx4-sm {
+  grid-template-columns: repeat(2, 33px);
+  grid-auto-rows: 33px;
+} */
+
+@media (max-width: 639px) {
+  .grid-nx4 {
+    @apply gap-5;
+    grid-template-columns: repeat(4, calc(25vw - 27px));
+    grid-auto-rows: calc(25vw - 27px); /* （100% - 2*PADDING*4 - 3*GAP*4）/ 4  */
+  }
+}
+
 .carousel-dot.active {
   @apply bg-gray-700;
 }
