@@ -11,6 +11,7 @@ import Social from '../components/Social.astro'
 import Profile from '../components/Profile.astro';
 import Section from '../components/Section.astro';
 import Showcase from '../components/Showcase.astro';
+import Counter from '../components/Counter.astro';
 ---
 <Layout>
 
@@ -43,6 +44,42 @@ import Showcase from '../components/Showcase.astro';
 			  @apply bg-gray-700;
 			}
 		  </style> -->
+
+		<Section
+		  content="Test"
+	  	/>
+
+		<Counter
+		  	title="Launch"
+			shape="sausage"
+			datetime="2024/05/01-12:00:00"
+			bgColor="bg-red-300"
+		/>
+
+		<Counter
+			title="Fire!!!!"
+			shape="tofu"
+			datetime="2024/05/01-11:00:00"
+			bgColor="bg-green-300"
+		/>
+		<Counter
+			title="Fire!!!!"
+			shape="tteok"
+			datetime="2024/05/01-10:00:00"
+			bgColor="bg-green-200"
+		/>
+		<Counter
+			title="Fire!!!!"
+			shape="puff"
+			datetime="2024/05/01-13:00:00"
+			bgColor="bg-green-100"
+		/>
+		<Counter
+			title="Fire!!!!"
+			shape="chikuwa"
+			datetime="2024/05/01-14:00:00"
+			bgColor="bg-green-100"
+		/>
 
 		<Section
 			content="Preface"

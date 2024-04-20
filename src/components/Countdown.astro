@@ -1,0 +1,146 @@
+---
+import type { Shape } from './enums';
+
+export interface Props {
+  title: string;
+  datetime: string,
+  shape: Shape,
+}
+
+const {
+  title,
+  datetime,
+  shape,
+} = Astro.props;
+
+const targetDate = new Date(datetime);
+const targetId = `${title}-${datetime}`;
+console.log(targetId);
+---
+
+<div id={targetId} class={`countdown-${shape} flex justify-center gap-5 flex-wrap`}>
+  <div>
+    <span class="countdown font-mono text-xl">
+      <span style="--value: 0"></span>
+    </span>
+    days
+  </div>
+  <div>
+    <span class="countdown font-mono text-xl">
+      <span style="--value: 0"></span>
+    </span>
+    hours
+  </div>
+  <div>
+    <span class="countdown font-mono text-xl">
+      <span style="--value: 0"></span>
+    </span>
+    min
+  </div>
+  <div>
+    <span class="countdown font-mono text-xl">
+      <span style="--value: 0"></span>
+    </span>
+    sec
+  </div>
+</div>
+
+<!-- <script src="/scripts/countdown.js"></script> -->
+
+<script  define:vars={{ targetDate, targetId }}>
+
+function getTimeRemaining(endtime) {
+    const total = endtime.getTime() - new Date().getTime();
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const seconds = Math.floor((total / 1000) % 60);
+    console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
+    return { total, days, hours, minutes, seconds };
+  }
+
+function initCountdown(targetDate, targetId) {
+  setInterval(() => {
+    console.log("set interval");
+    const { days, hours, minutes, seconds } = getTimeRemaining(targetDate);
+    // 获取当前执行的 <script> 标签
+    // const currentScript = document.currentScript;
+    
+    const target = document.getElementById(targetId);
+    console.log('current id:', targetId);
+    console.log('current script:', target);
+    const spans = target.querySelectorAll('.countdown > span');
+    spans.forEach((element, index) => {
+      if (element instanceof HTMLElement) {
+        switch (index) {
+          case 0:
+            element.style.setProperty('--value', days.toString());
+            break;
+          case 1:
+            element.style.setProperty('--value', hours.toString());
+            break;
+          case 2:
+            element.style.setProperty('--value', minutes.toString());
+            break;
+          case 3:
+            element.style.setProperty('--value', seconds.toString());
+            break;
+        }
+      }
+    });
+  }, 1000);
+}
+  let targetDatetime = new Date(targetDate);
+  initCountdown(targetDatetime, targetId);
+</script>
+
+<style>
+  .countdown-tofu div {
+    @apply flex flex-col items-center;
+  }
+  .countdown-tofu div .countdown {
+    @apply flex justify-center items-center;
+  }
+  .countdown-tofu div .countdown > span {
+    @apply text-5xl font-bold;
+  }
+
+
+  .countdown-tteok div {
+    @apply flex flex-col items-center;
+  }
+  .countdown-tteok div .countdown {
+    @apply flex justify-center items-center;
+  }
+  .countdown-tteok div .countdown > span {
+    @apply text-5xl font-bold;
+  }
+
+  
+  
+  .countdown-chikuwa div {
+    @apply flex flex-col items-center px-4;
+  }
+  .countdown-chikuwa div .countdown {
+    @apply flex justify-center items-center;
+  }
+  .countdown-chikuwa div .countdown > span {
+    @apply text-5xl font-bold;
+  }
+
+
+  .countdown-puff div {
+    @apply flex flex-col items-center px-1;
+  }
+  .countdown-puff div .countdown {
+    @apply flex justify-center items-center;
+  }
+  .countdown-puff div .countdown > span {
+    @apply text-4xl font-bold;
+  }
+
+
+  .countdown-sausage div .countdown > span {
+    @apply font-bold;
+  }
+</style>

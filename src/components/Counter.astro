@@ -1,0 +1,39 @@
+---
+import { calculateCardDimensions, getBackgroundStyles } from './Card.tsx';
+import type { BackgroundType, Shape } from './enums.tsx';
+
+import CountdownOneLine from './CountdownOneLine.astro';
+import Countdown from './Countdown.astro';
+
+// 定义 props
+export interface Props {
+  title: string;
+  datetime: string,
+  shape: Shape;
+  bgColor: string;
+  textColor?: string;
+}
+
+const {
+  title,
+  datetime,
+  shape,
+  bgColor = 'bg-white',
+  textColor = 'text-base-content',
+} = Astro.props;
+
+const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensions(shape);
+
+// let bgValue = background === 'color' ? bgColor : background === 'gradient' ? bgGradient : bgImgUrl;
+
+const cardBackgroundClasses = getBackgroundStyles(bgColor);
+
+---
+
+<div class={`${gridColSpan} ${gridRowSpan}`}>
+  <div class={`bd-card ${cardBackgroundClasses} ${textColor} justify-center`}>
+ 
+      <Countdown title={title} datetime={datetime} shape={shape}></Countdown>
+    
+  </div>
+</div>
