@@ -51,11 +51,14 @@ console.log(targetId);
 
 function getTimeRemaining(endtime) {
     const total = endtime.getTime() - new Date().getTime();
-    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+    let days = Math.floor(total / (1000 * 60 * 60 * 24));
     const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((total / 1000 / 60) % 60);
     const seconds = Math.floor((total / 1000) % 60);
     console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
+    if (days > 99) {
+      days = 99;
+    }
     return { total, days, hours, minutes, seconds };
   }
 

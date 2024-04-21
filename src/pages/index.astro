@@ -11,6 +11,7 @@ import Profile from '../components/Profile.astro';
 import Section from '../components/Section.astro';
 import Showcase from '../components/Showcase.astro';
 import Album from '../components/Album.astro'
+import Counter from '../components/Counter.astro'
 
 import data from '../data/john-smith.json';
 
@@ -75,7 +76,17 @@ let showcase = personalData.showcase || [];
 							imgs={item.Album.imgs} 
 						/>
 			  }
-			})}
+			  else if (item.Counter) {
+				return <Counter
+							title={item.Counter.title}
+							shape={item.Counter.shape}
+							datetime={item.Counter.datetime} 
+							bgColor={item.Counter.bgColor}
+							textColor={item.Counter.textColor}
+						/>
+			  }
+			})
+			}
 
 	</Showcase>
 
