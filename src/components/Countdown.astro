@@ -18,28 +18,28 @@ const targetId = `${title}-${datetime}`;
 console.log(targetId);
 ---
 
-<div id={targetId} class={`countdown-${shape} flex justify-center gap-5 flex-wrap`}>
+<div id={targetId} class={`countdown-container countdown-${shape} flex justify-center gap-x-5 gap-y-4 flex-wrap`}>
   <div>
-    <span class="countdown font-mono text-xl">
-      <span style="--value: 0"></span>
+    <span class="countdown font-notosans">
+      <span></span>
     </span>
     days
   </div>
   <div>
-    <span class="countdown font-mono text-xl">
-      <span style="--value: 0"></span>
+    <span class="countdown font-notosans">
+      <span></span>
     </span>
     hours
   </div>
   <div>
-    <span class="countdown font-mono text-xl">
-      <span style="--value: 0"></span>
+    <span class="countdown font-notosans">
+      <span></span>
     </span>
     min
   </div>
   <div>
-    <span class="countdown font-mono text-xl">
-      <span style="--value: 0"></span>
+    <span class="countdown font-notosans">
+      <span></span>
     </span>
     sec
   </div>
@@ -61,14 +61,11 @@ function getTimeRemaining(endtime) {
 
 function initCountdown(targetDate, targetId) {
   setInterval(() => {
-    console.log("set interval");
     const { days, hours, minutes, seconds } = getTimeRemaining(targetDate);
     // 获取当前执行的 <script> 标签
     // const currentScript = document.currentScript;
     
     const target = document.getElementById(targetId);
-    console.log('current id:', targetId);
-    console.log('current script:', target);
     const spans = target.querySelectorAll('.countdown > span');
     spans.forEach((element, index) => {
       if (element instanceof HTMLElement) {
@@ -95,52 +92,34 @@ function initCountdown(targetDate, targetId) {
 </script>
 
 <style>
-  .countdown-tofu div {
-    @apply flex flex-col items-center;
+  .countdown-container:not(.countdown-sausage):not(.countdown-chikuwa) div
+  {
+    @apply flex flex-col items-center px-1;
   }
-  .countdown-tofu div .countdown {
+  .countdown-container:not(.countdown-sausage):not(.countdown-puff) div .countdown {
     @apply flex justify-center items-center;
   }
-  .countdown-tofu div .countdown > span {
+  .countdown-container:not(.countdown-sausage):not(.countdown-puff) div .countdown > span
+   {
     @apply text-5xl font-bold;
   }
-
-
-  .countdown-tteok div {
-    @apply flex flex-col items-center;
-  }
-  .countdown-tteok div .countdown {
-    @apply flex justify-center items-center;
-  }
-  .countdown-tteok div .countdown > span {
-    @apply text-5xl font-bold;
-  }
-
-  
   
   .countdown-chikuwa div {
     @apply flex flex-col items-center px-4;
   }
-  .countdown-chikuwa div .countdown {
-    @apply flex justify-center items-center;
-  }
-  .countdown-chikuwa div .countdown > span {
-    @apply text-5xl font-bold;
-  }
 
-
-  .countdown-puff div {
-    @apply flex flex-col items-center px-1;
-  }
   .countdown-puff div .countdown {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center px-1;
   }
   .countdown-puff div .countdown > span {
-    @apply text-4xl font-bold;
+    @apply text-2xl font-bold;
   }
 
-
+  .countdown > span {
+    --value: 0;
+  }
+/* 
   .countdown-sausage div .countdown > span {
     @apply font-bold;
-  }
+  } */
 </style>

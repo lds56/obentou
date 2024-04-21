@@ -98,11 +98,34 @@ import type { BackgroundType } from './enums.tsx';
     // let cardBackgroundInlineStyles = '';
     if (parts.length == 1) {
       cardBackgroundClasses = bgValue;
-    } else if (parts.length == 2) {
-      cardBackgroundClasses = `bg-gradient-to-r ${bgValue}`;
-    } else if (parts.length >= 3) {
-      cardBackgroundClasses = `bg-gradient-to-tr ${bgValue}`;
-    } 
+    } else if (parts.length >= 2) {
+      if (parts[0].startsWith('gradient')) {
+        if (parts[0] === 'gradient-right') {
+          cardBackgroundClasses = `bg-gradient-to-r ${bgValue}`;
+        } else if (parts[0] === 'gradient-top') {
+          cardBackgroundClasses = `bg-gradient-to-t ${bgValue}`;
+        } else if (parts[0] === 'gradient-top-right') {
+          cardBackgroundClasses = `bg-gradient-to-tr ${bgValue}`;
+        } else if (parts[0] === 'gradient-bottom-right') {
+          cardBackgroundClasses = `bg-gradient-to-br ${bgValue}`;
+        } else if (parts[0] === 'gradient-bottom') {
+          cardBackgroundClasses = `bg-gradient-to-b ${bgValue}`;
+        } else if (parts[0] === 'gradient-bottom-left') {
+          cardBackgroundClasses = `bg-gradient-to-bl ${bgValue}`;
+        } else if (parts[0] === 'gradient-left') {
+          cardBackgroundClasses = `bg-gradient-to-l ${bgValue}`;
+        } else if (parts[0] === 'gradient-top-left') {
+          cardBackgroundClasses = `bg-gradient-to-tl ${bgValue}`;
+        } else {
+          cardBackgroundClasses = `bg-gradient-to-r ${bgValue}`;
+        }
+      } else {
+        cardBackgroundClasses = `bg-gradient-to-r ${bgValue}`;
+      }
+    }
+    // } else if (parts.length >= 3) {
+    //   cardBackgroundClasses = `bg-gradient-to-tr ${bgValue}`;
+    // } 
     return cardBackgroundClasses;
   }
 
