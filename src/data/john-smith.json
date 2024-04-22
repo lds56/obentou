@@ -7,7 +7,8 @@
     "showcase": [
     {
         "Section": {
-            "content": "Preface"
+            "title": "Preface",
+            "subtitle": "carpe diem"
         }
     },
     {
@@ -60,7 +61,8 @@
     },
     {
         "Section": {
-            "content": "Chapter II"
+            "title": "Chapter II",
+            "subtitle": "lalala"
         }
     },
     {
@@ -104,7 +106,7 @@
     },
     {
         "Section": {
-            "content": "Verrrrrrrrrry Loooooooooooooong Chapter"
+            "title": "Verrrrrrrrrry Loooooooooooooong Chapter"
         }
     },
     {

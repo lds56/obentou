@@ -1,15 +1,18 @@
 ---
 
 export interface Props {
-  content: string;
+  title: string;
+  subtitle?: string;
 }
 
 const {
-  content,
+  title,
+  subtitle
 } = Astro.props;
 
 ---
 
 <div class="col-span-full flex flex-col items-start justify-center">
-  <h1 class="text-3xl font-bold">{content}</h1>
+  <h1 class="text-3xl font-bold mb-2">{title}</h1>
+  {subtitle && <h2 class="text-xl font-medium text-gray-600">{subtitle}</h2>}
 </div>

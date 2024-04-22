@@ -32,7 +32,7 @@ let showcase = personalData.showcase || [];
 
 			{showcase.map((item: any) => {
 			  if (item.Section) {
-				return <Section content={item.Section.content} />
+				return <Section title={item.Section.title} subtitle={item.Section.subtitle} />
 			  } else if (item.Note) {
 				return <Note 
 							title={item.Note.title} 
