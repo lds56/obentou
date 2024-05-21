@@ -4,7 +4,7 @@ import { calculateCardDimensions, normalizeUrl, extractMainDomain } from './Card
 // 定义 props
 export interface Props {
   content: string;
-  shape: 'tofu' | 'puff' | 'chikuwa' | 'tteok' | 'sausage';
+  shape: '4x4' | '2x2' | '4x2' | '2x4' | '1x4';
   url: string;
   textColor?: string;
 }
@@ -25,7 +25,7 @@ const { cardWidth, cardHeight, gridColSpan, gridRowSpan } = calculateCardDimensi
 
 <div class={`${gridColSpan} ${gridRowSpan}`}>
   <a href={normUrl} class={`bd-card text-${textColor} hover:bg-gray-100/50 transition-colors duration-300`}>
-    {shape === 'sausage'? (
+    {shape === '1x4'? (
       <div class="card-body-sm">
         <div class="card-actions justify-start items-center">
           <div class="w-8 h-8 rounded-full flex items-center justify-center"> 

@@ -49,72 +49,73 @@ console.log(targetId);
 
 <script  define:vars={{ targetDate, targetId }}>
 
-function getTimeRemaining(endtime) {
-    const total = endtime.getTime() - new Date().getTime();
-    let days = Math.floor(total / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((total / 1000 / 60) % 60);
-    const seconds = Math.floor((total / 1000) % 60);
-    console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
-    if (days > 99) {
-      days = 99;
-    }
-    return { total, days, hours, minutes, seconds };
-  }
+  // function getTimeRemaining(endtime) {
+  //     const total = endtime.getTime() - new Date().getTime();
+  //     let days = Math.floor(total / (1000 * 60 * 60 * 24));
+  //     const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  //     const minutes = Math.floor((total / 1000 / 60) % 60);
+  //     const seconds = Math.floor((total / 1000) % 60);
+  //     console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
+  //     if (days > 99) {
+  //       days = 99;
+  //     }
+  //     return { total, days, hours, minutes, seconds };
+  //   }
 
-function initCountdown(targetDate, targetId) {
-  setInterval(() => {
-    const { days, hours, minutes, seconds } = getTimeRemaining(targetDate);
-    // 获取当前执行的 <script> 标签
-    // const currentScript = document.currentScript;
-    
-    const target = document.getElementById(targetId);
-    const spans = target.querySelectorAll('.countdown > span');
-    spans.forEach((element, index) => {
-      if (element instanceof HTMLElement) {
-        switch (index) {
-          case 0:
-            element.style.setProperty('--value', days.toString());
-            break;
-          case 1:
-            element.style.setProperty('--value', hours.toString());
-            break;
-          case 2:
-            element.style.setProperty('--value', minutes.toString());
-            break;
-          case 3:
-            element.style.setProperty('--value', seconds.toString());
-            break;
-        }
-      }
-    });
-  }, 1000);
-}
-  let targetDatetime = new Date(targetDate);
-  initCountdown(targetDatetime, targetId);
+  // function initCountdown(targetDate, targetId) {
+  //   setInterval(() => {
+  //     const { days, hours, minutes, seconds } = getTimeRemaining(targetDate);
+  //     // 获取当前执行的 <script> 标签
+  //     // const currentScript = document.currentScript;
+      
+  //     const target = document.getElementById(targetId);
+  //     const spans = target.querySelectorAll('.countdown > span');
+  //     spans.forEach((element, index) => {
+  //       if (element instanceof HTMLElement) {
+  //         switch (index) {
+  //           case 0:
+  //             element.style.setProperty('--value', days.toString());
+  //             break;
+  //           case 1:
+  //             element.style.setProperty('--value', hours.toString());
+  //             break;
+  //           case 2:
+  //             element.style.setProperty('--value', minutes.toString());
+  //             break;
+  //           case 3:
+  //             element.style.setProperty('--value', seconds.toString());
+  //             break;
+  //         }
+  //       }
+  //     });
+  //   }, 1000);
+  // }
+
+  // let targetDatetime = new Date(targetDate);
+  // initCountdown(targetDatetime, targetId);
 </script>
 
 <style>
-  .countdown-container:not(.countdown-sausage):not(.countdown-chikuwa) div
+  .countdown-container:not(.countdown-1x4):not(.countdown-4x2) div
   {
     @apply flex flex-col items-center px-1;
   }
-  .countdown-container:not(.countdown-sausage):not(.countdown-puff) div .countdown {
+  .countdown-container:not(.countdown-1x4):not(.countdown-2x2) div .countdown {
     @apply flex justify-center items-center;
   }
-  .countdown-container:not(.countdown-sausage):not(.countdown-puff) div .countdown > span
+  .countdown-container:not(.countdown-1x4):not(.countdown-2x2) div .countdown > span
    {
     @apply text-5xl font-bold;
   }
   
-  .countdown-chikuwa div {
+  .countdown-4x2 div {
     @apply flex flex-col items-center px-4;
   }
 
-  .countdown-puff div .countdown {
+  .countdown-2x2 div .countdown {
     @apply flex justify-center items-center px-1;
   }
-  .countdown-puff div .countdown > span {
+  .countdown-2x2 div .countdown > span {
     @apply text-2xl font-bold;
   }
 
@@ -122,7 +123,7 @@ function initCountdown(targetDate, targetId) {
     --value: 0;
   }
 /* 
-  .countdown-sausage div .countdown > span {
+  .countdown-1x4 div .countdown > span {
     @apply font-bold;
   } */
 </style>

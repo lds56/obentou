@@ -15,35 +15,35 @@ import type { BackgroundType } from './enums.tsx';
     let gridRowSpan = '';
   
     // large square
-    if (shape === 'tofu') {
+    if (shape === '4x4') {
       cardWidth = 'w-92';
       cardHeight = 'h-92 aspect-square';
       gridColSpan = 'col-span-4';
       gridRowSpan = 'row-span-4';
     }
     // small square
-    else if (shape === 'puff') {
+    else if (shape === '2x2') {
       cardWidth = 'w-42';
       cardHeight = 'h-42 aspect-square';
       gridColSpan = 'col-span-2';
       gridRowSpan = 'row-span-2';
     }
     // vertical rectangle
-    else if (shape === 'chikuwa') {
+    else if (shape === '4x2') {
       cardWidth = 'w-42';
       cardHeight = 'h-92';
       gridColSpan = 'col-span-2';
       gridRowSpan = 'row-span-4';
     }
     // horizontal rectangle
-    else if (shape === 'tteok') {
+    else if (shape === '2x4') {
       cardWidth = 'w-92';
       cardHeight = 'h-42';
       gridColSpan = 'col-span-4';
       gridRowSpan = 'row-span-2';
     }
     // long rectangle
-    else if (shape === 'sausage') {
+    else if (shape === '1x4') {
       cardWidth = 'w-92';
       cardHeight = 'h-20';
       gridColSpan = 'col-span-4';

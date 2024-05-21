@@ -12,12 +12,17 @@ import Profile from '../components/Profile.astro';
 import Section from '../components/Section.astro';
 import Showcase from '../components/Showcase.astro';
 import Counter from '../components/Counter.astro';
+import Post from '../components/Post.astro';
 ---
 <Layout>
 
 	<Profile myname="John Smith" mybio="A time traveler" myavatar="/imgs/avatar.jpeg"/>
 
 	<Showcase>
+
+		<Post
+			title="My First Blog Post"
+		/>
 
 		<!-- <div class="carousel carousel-center rounded-box">
 			<div class="carousel-item">
@@ -50,35 +55,8 @@ import Counter from '../components/Counter.astro';
 	  	/>
 
 		<Counter
-		  	title="Launch"
-			shape="sausage"
-			datetime="2024/05/01-12:00:00"
-			bgColor="bg-red-300"
-		/>
-
-		<Counter
 			title="Fire!!!!"
-			shape="tofu"
-			datetime="2024/05/01-11:00:00"
-			bgColor="gradient-bottom-right from-[#6991af] to-[#73b3b0]"
-			textColor="text-white"
-		/>
-		<Counter
-			title="Fire!!!!"
-			shape="tteok"
-			datetime="2024/05/01-10:00:00"
-			bgColor="gradient-top-right from-[#6991af] to-[#73b3b0]"
-			textColor="text-white"
-		/>
-		<Counter
-			title="Fire!!!!"
-			shape="puff"
-			datetime="2024/05/01-13:00:00"
-			bgColor="bg-green-100"
-		/>
-		<Counter
-			title="Fire!!!!"
-			shape="chikuwa"
+			shape="4x2"
 			datetime="2024/05/01-14:00:00"
 			bgColor="bg-green-100"
 		/>
@@ -91,13 +69,13 @@ import Counter from '../components/Counter.astro';
 		<Note
 			title="What's my hobby"
 			content="find aliens!"
-			shape="tofu"
+			shape="4x4"
 			bgColor="from-green-500 to-yellow-300"
 		/>
 
 		<Link
 			content="This is my homepage zero"
-			shape="tteok"
+			shape="2x4"
 			url="www.instagram.com"
 		/>
 				
@@ -108,7 +86,7 @@ import Counter from '../components/Counter.astro';
 		<Note
 			title="PPPPPPP"
 			content="cool!"
-			shape="puff"
+			shape="2x2"
 			bgColor="bg-blue-300"
 			textColor="text-black"
 		/>
@@ -117,7 +95,7 @@ import Counter from '../components/Counter.astro';
 		<Note
 			title="PPPPQQQ"
 			content="cool!"
-			shape="puff"
+			shape="2x2"
 			bgColor="bg-yellow-300"
 			textColor="text-white"
 		/>
@@ -125,7 +103,7 @@ import Counter from '../components/Counter.astro';
 		<Note
 			title="aloha"
 			content="helllllo"
-			shape="tofu"
+			shape="4x4"
 			bgColor="bg-green-500"
 			textColor="text-yellow-300"
 		/>
@@ -134,14 +112,14 @@ import Counter from '../components/Counter.astro';
 			platform="X"
 			userId="@johnsmith416"
 			content="John Smith"
-			shape="puff"
+			shape="2x2"
 		/>
 		
 		<Note
 			title="aloha2"
 			content="helllllo"
-			shape="puff"
-			bgColor="bg-pink-500"
+			shape="2x2"
+			bgColor="gradient-top-left from-green-300 to-yellow-300"
 			textColor="text-white-300"
 		/>
 		
@@ -149,7 +127,7 @@ import Counter from '../components/Counter.astro';
 			platform="Instagram"
 			userId="@johnsmith111"
 			content="John Smith 2"
-			shape="chikuwa"
+			shape="4x2"
 		/>
 				
 		<Section
@@ -158,33 +136,33 @@ import Counter from '../components/Counter.astro';
 
 		<Link
 			content="This is my homepage"
-			shape="tteok"
+			shape="2x4"
 			url="www.baidu.com"
 		/>
 
 		<Link
 			content="Goooooooooooogle"
-			shape="tofu"
+			shape="4x4"
 			url="www.google.com"
 		/>
 
 		<Photo
 			title="caaat"
 			content="This is my cat"
-			shape="chikuwa"
+			shape="4x2"
 			imgUrl="/imgs/cats.jpg"
 		/>
 
 
 		<!-- <Code
 			content=""
-			shape="tofu"
+			shape="4x4"
 		/> -->
 
 		<!-- <Map
 			content="Westlake"
 			address="Hangzhou,China"
-			shape="tofu"
+			shape="4x4"
 			zoom="10"
 			textColor="black"
 		/> -->

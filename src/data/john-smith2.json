@@ -60,7 +60,7 @@
     {
         "Social": {
             "shape": "2x2",
-            "content": "John Smith 2",
+            "title": "John Smith 2",
             "platform": "Instagram",
             "userId": "@johnsmith222"
         }
@@ -68,34 +68,35 @@
     {
         "Social": {
             "shape": "2x4",
-            "content": "John Smith",
+            "title": "John Smith",
             "platform": "Xiaohongshu",
             "userId": "@johnsmithRed"
         }
     },
     {
         "Link": {
-            "content": "This is my homepage",
+            "title": "This is my homepage",
             "shape": "1x4",
             "url": "www.baidu.com"
         }
     },
     {
         "Link": {
-            "content": "This is my homepage2",
+            "title": "This is my homepage2",
             "shape": "2x4",
             "url": "www.baidu.com"
         }
     },
     {
         "Link": {
-            "content": "This is my homepage 2",
+            "title": "This is my homepage 2",
             "shape": "2x2",
             "url": "www.facebook.com"
         }
     },   
     {
         "Album": {
+            "title": "lalala",
             "shape": "4x4",
             "imgs": [
                 "cd.jpeg",
@@ -127,6 +128,7 @@
     },
     {
         "Photo": {
+            "title": "ok",
             "shape": "2x4",
             "imgUrl": "tree.jpeg"
         }

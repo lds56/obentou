@@ -24,8 +24,8 @@ const post = postEntries.find((entry: CollectionEntry<typeof collectionName>) =>
 ---
 {
   post && (
-    <button class="btn" onclick="mmm.showModal()">open modal</button>
-    <dialog id="mmm" class="modal">
+    <button class="btn" onclick="showModal('mmm')">open modal</button>
+    <dialog id="mmm" class="modal" oncancel="closeModal('mmm')">
         <div class="modal-box relative w-4/5 max-w-6xl shadow-sm border border-base-300 rounded-md">
             <label for="my-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
@@ -34,11 +34,23 @@ const post = postEntries.find((entry: CollectionEntry<typeof collectionName>) =>
               <p>{post.data.description}</p>
               <Markdown of={post.body} />
             </article>
-            <form method="dialog">
-              <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            <form method="dialog" >
+              <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="closeModal('mmm')">✕</button>
             </form>
         </div>
     </dialog>
+
+<!-- Open the modal using ID.showModal() method -->
+<button class="btn" onclick="my_modal_2.showModal()">open modal</button>
+<dialog id="my_modal_2" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Hello!</h3>
+    <p class="py-4">Press ESC key or click outside to close</p>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
   )
 }
 
@@ -55,12 +67,32 @@ const post = postEntries.find((entry: CollectionEntry<typeof collectionName>) =>
 /* 打开时:从底部向上滑动,持续时间 0.5s,动画曲线为快->慢 */
 .modal.modal-open .modal-box {
   transform: translateY(0);
-  transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  transition: transform 1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
-/* 关闭时:从顶部向下滑动,持续时间 0.5s,动画曲线为慢->快 */
-.modal.modal-open.modal-closing .modal-box {
+/* 关闭时:从顶部向下滑动,持续时间 2s,动画曲线为快->慢 */
+.modal:not(.modal-open) .modal-box {
   transform: translateY(100%);
-  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 </style>
+
+<script is:inline>
+function showModal(modalId) {
+  console.log('show modal')
+  const myModal = document.getElementById(modalId);
+  if (myModal) {
+    myModal.showModal();
+    myModal.classList.add('modal-open');
+  }
+}
+
+function closeModal(modalId) {
+  const myModal = document.getElementById(modalId);
+  if (myModal) {
+    myModal.classList.remove('modal-open');
+    myModal.close();
+  }
+}
+
+</script>

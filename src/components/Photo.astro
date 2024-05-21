@@ -9,7 +9,7 @@ import {
 export interface Props {
   title: string;
   content: string;
-  shape: "tofu" | "puff" | "chikuwa" | "tteok" | "sausage";
+  shape: "4x4" | "2x2" | "4x2" | "2x4" | "1x4";
   imgUrl: string;
 }
 
@@ -32,7 +32,7 @@ let cardBackgroundInlineStyles = `background-image: url('/assets/imgs/photos/${i
     title && content && (
       <>
         <div class="absolute inset-0 bg-black rounded-3xl opacity-30" />
-        {shape === "sausage" ? (
+        {shape === "1x4" ? (
           <div class="card-body-sm relative z-10">
             <div class="card-actions justify-start flex items-center h-8">
               <p>{content}</p>
