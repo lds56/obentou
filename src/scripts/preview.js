@@ -86,24 +86,24 @@ function getColoredRect(width, height, color) {
   
   // 使用示例
 
-  console.log(mergeV(getColoredRect(4, 3, "green"), getColoredRect(4, 3, "red")));
-  console.log(mergeH(getColoredRect(4, 3, "red"), getColoredRect(4, 3, "blue")));
+//   console.log(mergeV(getColoredRect(4, 3, "green"), getColoredRect(4, 3, "red")));
+//   console.log(mergeH(getColoredRect(4, 3, "red"), getColoredRect(4, 3, "blue")));
 
 
-  console.log(getColoredRect(4, 3, "white"));
+//   console.log(getColoredRect(4, 3, "white"));
 
-  console.log(getColoredRect(9, 6, "green"));
+//   console.log(getColoredRect(9, 6, "green"));
 
-  console.log(getColoredRect(4, 6, "blue"));
+//   console.log(getColoredRect(4, 6, "blue"));
 
-  console.log(getColoredRect(9, 3, "cyan"));
+//   console.log(getColoredRect(9, 3, "cyan"));
 
-  console.log(getColoredRect(9, 1, "magenta"));
+//   console.log(getColoredRect(9, 1, "magenta"));
 
 
-  let aaa = mergeV(getColoredRect(9, 1, "green"), getColoredRect(9, 1, "red"));
-  let ccc= getColoredRect(9, 3, "cyan");
-//   console.log(ccc);
-//   console.log(aaa);
-  let bbb = mergeH(aaa, ccc);
-  console.log(bbb);
+//   let aaa = mergeV(getColoredRect(9, 1, "green"), getColoredRect(9, 1, "red"));
+//   let ccc= getColoredRect(9, 3, "cyan");
+// //   console.log(ccc);
+// //   console.log(aaa);
+//   let bbb = mergeH(aaa, ccc);
+//   console.log(bbb);
