@@ -8,7 +8,7 @@ export default {
 			},
 		},
 	},
-	plugins: [require("daisyui")],
+	plugins: [require("@tailwindcss/typography"), require("daisyui")],
 	daisyUI: {
 		themes: ["light", "dark", "cupcake"], // 选择要启用的主题
 		// base: true, // 是否使用 daisyUI 的基础样式
