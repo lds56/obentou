@@ -74,6 +74,14 @@
         }
     },
     {
+        "Social": {
+            "shape": "4x2",
+            "content": "John's Game",
+            "platform": "Itch",
+            "userId": "@johnsgame"
+        }
+    },
+    {
         "Link": {
             "content": "This is my homepage",
             "shape": "1x4",
